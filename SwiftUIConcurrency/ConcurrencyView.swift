@@ -12,7 +12,7 @@ struct ConcurrencyView: View {
     
     var body: some View {
         Text(viewModel.designPhilosophy)
-            .task {
+            .task { // Use task (not onAppear) for async methods
                 await viewModel.fetch()
             }
     }
