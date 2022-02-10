@@ -1,1 +1,2 @@
-# A sample of Swift Concurrency and SwiftUI
+## SwiftUIConcurrency
+A sample of Swift Concurrency on SwiftUI
