@@ -18,13 +18,13 @@ struct ConcurrencyView: View {
     }
 }
 
-// @MainActor will guarantee that properties & methods are only ever accessed from MainActor
-@MainActor
 /// ViewModel with Concurrency
 final class ConcurrencyViewViewModel: ObservableObject {
     @Published private(set) var designPhilosophy = ""
     private let model = Model()
     
+    // @MainActor will guarantee that properties & methods are only ever accessed from MainActor
+    @MainActor
     func fetch() async {
         // "await" yield the MainActor back to SwiftUI.
         // When "async" completes, Swift reenters the method back on the MainActor.
